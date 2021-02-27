@@ -1,9 +1,12 @@
 import React from 'react';
+import './scss/styles.scss';
 
 export default function App() {
   return (
-    <h1>
-      Movie ratings for feminists.
-    </h1>
+    <div className='header'>
+      <h1 className='header__title'>
+        Movie ratings for feminists.
+      </h1>
+    </div>
   );
 }
