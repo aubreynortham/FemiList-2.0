@@ -1,4 +1,32 @@
+// colors
+$pink: #d73e8d;
+$pinkgray: #d5aac0;
+$black: #171717;
+$black-hover: #343434;
+
+// breakpoints
+$medium: 56rem;
+
 body,
 html {
-  background-color: rgb(255, 222, 244);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: $black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+input
+button {
+  margin: 0;
+  padding: 0;
 }
