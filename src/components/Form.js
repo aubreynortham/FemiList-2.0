@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import blob from '../images/blob.svg';
+import blob from '../images/blob-1.svg';
 
 export default function Form() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -92,6 +92,7 @@ export default function Form() {
       <div className='form__controls'>
         <input
           type='text'
+          aria-label='Search for a movie'
           placeholder='Search for a movie'
           className='form__input'
           onChange={(e) => setSearchTerm(e.target.value)}

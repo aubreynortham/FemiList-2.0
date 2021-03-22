@@ -11,9 +11,10 @@ body,
 html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
   color: $black;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 * {
@@ -26,7 +27,9 @@ h3,
 p,
 a,
 input
-button {
+button,
+ul,
+li {
   margin: 0;
   padding: 0;
 }

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient spreadMethod="pad" id="myGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1;" />
+      <stop offset="100%" style="stop-color:rgb(207, 158, 191);stop-opacity:1;" />
+    </linearGradient>
+  </defs>
+  <path fill="url('#myGradient2')" d="M40.5,-42.1C54.8,-36.3,70.3,-25.7,76.4,-10.6C82.4,4.5,79,24.1,67.7,34.6C56.3,45.2,36.9,46.8,20.6,49.7C4.3,52.6,-8.9,56.8,-19.5,53.2C-30.1,49.5,-38,38,-50.3,25C-62.7,12,-79.4,-2.5,-80.3,-17.1C-81.3,-31.8,-66.5,-46.7,-50.5,-52.3C-34.5,-57.8,-17.2,-54,-2.1,-51.5C13.1,-49.1,26.2,-48,40.5,-42.1Z" transform="translate(100 100)" />
+</svg>
