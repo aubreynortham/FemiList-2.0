@@ -1,0 +1,58 @@
+.footer {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.5) 0%, rgba(207, 158, 191, 0.6) 100%);
+
+  @media screen and (min-width: $medium) {
+    margin-top: 8rem;
+    padding: 4rem 2rem;
+  }
+
+  &__attributions {
+    position: relative;
+    display: inline-block;
+
+    & > a {
+      font-weight: bold;
+    }
+
+    &::before {
+      clip-path: polygon(0% 0%, 0% 100%, 16% 100%, 16% 14%, 100% 14%, 100% 0%);
+      content: '';
+      display: block;
+      position: absolute;
+      top: -1.5rem;
+      left: -1.5rem;
+      height: 3rem;
+      width: 3rem;
+      background-color: $pinkgray;
+
+      @media screen and (min-width: $medium) {
+        left: -2.5rem;
+      }
+    }
+
+    &::after {
+      clip-path: polygon(100% 100%, 0% 100%, 0 87%, 87% 87%, 87% 0, 100% 0%);;
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      height: 3rem;
+      width: 3rem;
+      background-color: $pinkgray;
+
+      @media screen and (min-width: $medium) {
+        right: -2.5rem;
+      }
+    }
+  }
+
+  &__separator {
+    padding: 0 1rem;
+  }
+}
