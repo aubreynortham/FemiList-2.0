@@ -6,7 +6,8 @@ export default function Bechdel() {
       <p className='footer__attributions'>
       Website by <a href='https://github.com/aubreynortham/FemiList-2.0'>Aubrey</a>
       <span className='footer__separator'>•</span>
-      Animated illustrations by <a href='https://storyset.com'>Storyset</a>
+      Animated illustrations by <a href='https://storyset.com'>Storyset</a>{' '}
+      & <a href='https://lordicon.com'>Lordicon</a>
       </p>
     </footer>
   );

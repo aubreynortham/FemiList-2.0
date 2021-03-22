@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import blob from '../images/blob-1.svg';
+import film from '../images/film.gif';
 
 export default function Form() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -112,7 +113,12 @@ export default function Form() {
           </p>
         </>
       )}
-      {contentLoading && 'LOADING!'}
+      {contentLoading && (
+        <div className='form__loader'>
+          <img className='form__loader-icon' src={film} alt='film clipboard' />
+          <p>Loading ...</p>
+        </div>
+      )}
       {movieData && movieData.length > 0 && (
         <>
           <h2>Showing {movieData.length} result{movieData.length > 1 && 's'} for {searchTerm}</h2>

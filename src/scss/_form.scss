@@ -127,4 +127,14 @@
       background-color: white;
     }
   }
+
+  &__loader {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  &__loader-icon {
+    border-radius: 50%;
+  }
 }
