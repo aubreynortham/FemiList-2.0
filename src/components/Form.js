@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import blob from '../images/blob-1.svg';
 import film from '../images/film.gif';
+import Result from './Result';
 
 export default function Form() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,17 +17,6 @@ export default function Form() {
   const customOMDBKey = '&apikey=567ccae1';
   const urlBechdel = `${customCorsProxy}http://bechdeltest.com/api/v1/getMoviesByTitle?title=${searchTerm.replace(/\s/, '+')}`;
   const urlOMDB = 'https://omdbapi.com?i=';
-
-  const formattedTitle = (entry) => {
-    // HTML entities to plain text
-    const txt = document.createElement('textarea');
-    txt.innerHTML = entry;
-    // correct title stricture
-    if (txt.value.endsWith(', The')) {
-      txt.value = `The ${txt.value.substring(0, txt.value.length - 5)}`;
-    }
-    return txt.value;
-  };
 
   // sort results by descending IMDB votes and display top 10
   const sortRelevance = (arr) => {
@@ -85,7 +75,7 @@ export default function Form() {
   };
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit} id='search-films'>
       <div className='form__header'>
         <img className='form__header-blob' src={blob} alt='' />
         <h2 className='form__header-title'>Does your movie pass the <a href='#bechdel-test'>Bechdel Test</a>?</h2>
@@ -99,7 +89,7 @@ export default function Form() {
           onChange={(e) => setSearchTerm(e.target.value)}
           value={searchTerm}
         />
-        <button type='submit' className='form__button' disabled={!searchTerm}>Search</button>
+        <button type='submit' className='button' disabled={!searchTerm || contentLoading}>Search</button>
       </div>
       {errorMessage}
       {blankBechdelResults && (
@@ -121,35 +111,12 @@ export default function Form() {
       )}
       {movieData && movieData.length > 0 && (
         <>
-          <h2>Showing {movieData.length} result{movieData.length > 1 && 's'} for {searchTerm}</h2>
-          {movieData.map((movie, idx) => (
-            <article key={idx}>
-              <img src={movie.poster} alt={`${movie.title} poster`} />
-              <h3>{formattedTitle(movie.title)}</h3>
-              <p>Genre: {movie.genre}</p>
-              <p>Release Date: {movie.year}</p>
-              <p>Parental Rating: {movie.rated}</p>
-              <p>IMDB Rating: {movie.imdbRating} / 10</p>
-              <p>Plot: {movie.plot}</p>
-              <p>Bechdel Score: {movie.rating} / 3</p>
-              {movie.rating === 0 && (
-                <p>This movie does not even have two female characters.</p>
-              )}
-              {movie.rating === 1 && (
-                <p>
-                  There are at least two female characters but they do not share any dialogue with
-                  each other.
-                </p>
-              )}
-              {movie.rating === 2 && (
-                <p>There are at least two female characters who share dialogue with each other, but
-                their only dialogue is about a man.</p>
-              )}
-              {movie.rating === 3 && (
-                <p>This movie passes all test criteria</p>
-              )}
-            </article>
-          ))}
+          <h2>Showing{movieData.length > 9 && ' top'} {movieData.length} result{movieData.length > 1 && 's'} for {searchTerm}</h2>
+          <div className='form__results'>
+            {movieData.map((movie, idx) => (
+              <Result key={idx} movie={movie} />
+            ))}
+          </div>
         </>
       )}
     </form>

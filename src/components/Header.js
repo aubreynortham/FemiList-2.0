@@ -13,7 +13,7 @@ export default function Header() {
             Movie ratings for feminists.*
           </h1>
           <p className='header__disclaimer'>
-            <span className='header__highlight'>
+            <span className='highlight'>
               *And for the rest of the population, because the media&#39;s representation of women
               matters.
             </span>

@@ -84,7 +84,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      background: $pinkgray;
+      background: linear-gradient(to right, #343f4b, #8f7180);
       transition: 0.4s ease;
       transform: translate(12px, -12px);
       z-index: -1;
@@ -104,5 +104,10 @@
   &__disclaimer {
     margin-top: 2rem;
     font-size: 0.875rem;
+  }
+
+  &__button-wrapper {
+    max-width: 30rem;
+    margin: 4rem auto 0 auto;
   }
 }

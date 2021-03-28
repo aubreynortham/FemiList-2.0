@@ -38,7 +38,7 @@ export default function Bechdel() {
           of all movies could not pass the test.
         </li>
         <li className='bechdel__recap'>
-          It&#39;s a simple checklist developed by cartoonist <span className='header__highlight'>&nbsp;Alison Bechdel&nbsp;</span> used to highlight
+          It&#39;s a simple checklist developed by cartoonist <span className='highlight'>&nbsp;Alison Bechdel&nbsp;</span> used to highlight
           gender disparity in film and other media. The test is a great tool to measure not just
           the number of female characters on the screen, but to illustrate how often popular media
           fail to include any female character development or female-driven narratives. The
@@ -53,6 +53,11 @@ export default function Bechdel() {
           <p className='bechdel__disclaimer'>*creative liberties were taken</p>
         </li>
       </ul>
+      <div className='bechdel__button-wrapper'>
+        <a className='button' href='#search-films'>
+          Back to Search
+        </a>
+      </div>
     </section>
   );
 }
