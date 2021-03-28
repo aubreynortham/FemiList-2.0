@@ -93,17 +93,19 @@ export default function Form() {
         />
         <button type='submit' className='button' disabled={!searchTerm || contentLoading}>Search</button>
       </div>
-      {errorMessage}
+      {errorMessage && (
+        <div className='form__results'>
+          <h2 className='form__results-header'>{errorMessage}</h2>
+        </div>
+      )}
       {blankBechdelResults && (
-        <>
-          <p>No results:</p>
-          <p>
+        <div className='form__results'>
+          <h2 className='form__results-header'>No results:</h2>
+          <p className='form__results-error'>
             This site pulls in movie data from the Bechdel Test API. If you think a movie should
-            be rated that is not yet in the database, contribute to the API{' '}
-            <a id="hereLink" href="http://bechdeltest.com/add/">here</a>
-            .
+            be rated that is not yet in the database, <a href="http://bechdeltest.com/add/">contribute to the API</a>.
           </p>
-        </>
+        </div>
       )}
       {contentLoading && (
         <div className='form__loader'>

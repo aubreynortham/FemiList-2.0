@@ -114,4 +114,13 @@
       margin-bottom: 1rem;
     }
   }
+
+  &__results-error {
+    margin-top: -9rem;
+
+    @media screen and (min-width: $small) {
+      margin-left: 4rem;
+      margin-top: 0;
+    }
+  }
 }
