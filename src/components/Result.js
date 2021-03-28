@@ -5,14 +5,13 @@ import star from '../images/star.svg';
 import starFilled from '../images/star-filled.svg';
 
 export default function Result({ movie }) {
-  console.log(movie);
   const [expanded, setExpanded] = useState(false);
 
   const formattedTitle = (entry) => {
     // HTML entities to plain text
     const txt = document.createElement('textarea');
     txt.innerHTML = entry;
-    // correct title stricture
+    // updating title stricture
     if (txt.value.endsWith(', The')) {
       txt.value = `The ${txt.value.substring(0, txt.value.length - 5)}`;
     }
@@ -54,30 +53,33 @@ export default function Result({ movie }) {
       </div>
       {expanded && (
         <div className='result__expanded' id={movie.id}>
-          here are results.
-          <p>Genre: {movie.genre}</p>
-          <p>Release Date: {movie.year}</p>
-          <p>Parental Rating: {movie.rated}</p>
-          <p>IMDB Rating: {movie.imdbRating} / 10</p>
-          <p>Plot: {movie.plot}</p>
-          <p>Bechdel Score: {movie.rating} / 3</p>
-          {movie.rating === 0 && (
-            <p>This movie does not even have two female characters.</p>
-          )}
-          {movie.rating === 1 && (
-            <p>
-              There are at least two named female characters but they do not share any
-              dialogue with each other.
-            </p>
-          )}
-          {movie.rating === 2 && (
-            <p>
-              There are at least two female characters who share dialogue with each other,
-              but their only dialogue is about a man.
-            </p>
-          )}
-          {movie.rating === 3 && (
-            <p>This movie passes all test criteria</p>
+          <p className='result__total-overview'>
+            {movie.rating === 0 && (
+              'This movie does not even have two named female characters.'
+            )}
+            {movie.rating === 1 && (
+              'There are at least two named female characters but they do not share any dialogue with each other.'
+            )}
+            {movie.rating === 2 && (
+              'There are at least two female characters who share dialogue with each other, but their only dialogue is about a man.'
+            )}
+            {movie.rating === 3 && (
+              'This movie passes full Bechdel test criteria.'
+            )}
+          </p>
+          <p className='result__stats'>
+            {movie.year}
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            {movie.rated !== 'Not Rated' ? `Rated ${movie.rated}` : movie.rated}
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            IMDb {movie.imdbRating}/10</p>
+          <p className='result__plot'>{movie.plot}</p>
+          {movie.genre.split(', ').length > 0 && (
+            <ul className='result__genre-tags'>
+              {movie.genre.split(', ').map((genre, idx) => (
+                <li key={idx} className='result__genre-tag'>{genre}</li>
+              ))}
+            </ul>
           )}
         </div>
       )}

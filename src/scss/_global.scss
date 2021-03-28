@@ -1,6 +1,7 @@
 // colors
 $pink: #d73e8d;
-$pinkgray: #d5aac0;
+$pinkgray: #dfcbd5;
+$darkpinkgray: #8f7180;
 $black: #171717;
 $black-hover: #343434;
 
@@ -37,7 +38,7 @@ li {
 }
 
 .highlight {
-  background: linear-gradient(to top, $pinkgray, #dfcbd5);
+  background: linear-gradient(to top, #d5aac0, $pinkgray);
   font-weight: bold;
 }
 
@@ -73,7 +74,7 @@ li {
     position: absolute;
     top: 0;
     right: 0;
-    background: linear-gradient(to right, #343f4b, #8f7180);
+    background: linear-gradient(to right, #343f4b, $darkpinkgray);
     transition: 0.4s ease;
     transform: translate(12px, -12px);
     z-index: -1;
