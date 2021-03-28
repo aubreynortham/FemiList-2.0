@@ -1,21 +1,39 @@
 .result {
   position: relative;
-  margin-top: 6rem;
+  margin-top: 11rem;
   border-radius: 4rem;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
+  @media screen and (min-width: $small) {
+    margin-top: 6rem;
+
+    &:nth-of-type(1) {
+      margin-top: 0;
+    }
+  }
 
   &__image {
     position: absolute;
     max-height: 12rem;
-    bottom: -2rem;
-    left: -2rem;
+    top: -8rem;
+    left: 50%;
+    transform: translateX(-50%);
     filter: grayscale(1);
     transition: 0.4s ease;
 
     &.expanded {
-      bottom: -8rem;
       filter: none;
+    }
+
+    @media screen and (min-width: $small) {
+      top: unset;
+      bottom: -2rem;
+      left: -2rem;
+      transform: none;
+
+      &.expanded {
+        bottom: -8rem;
+      }
     }
 
     @media screen and (min-width: $medium) {
@@ -28,13 +46,17 @@
   &__header {
     position: relative;
     min-height: 12rem;
-    padding: 2rem 2rem 2rem 8rem;
+    padding: 5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     border-radius: 4rem;
     transition: 0.2s ease;
+
+    @media screen and (min-width: $small) {
+      padding: 2rem 2rem 2rem 8rem;
+    }
 
     @media screen and (min-width: $medium) {
       min-height: 18rem;
@@ -131,7 +153,11 @@
   }
 
   &__expanded {
-    padding: 4rem 2rem 2rem 8rem;
+    padding: 4rem 2rem 2rem 2rem;
+
+    @media screen and (min-width: $small) {
+      padding: 4rem 2rem 2rem 8rem;
+    }
 
     @media screen and (min-width: $medium) {
       padding: 4rem 4rem 4rem 14rem;

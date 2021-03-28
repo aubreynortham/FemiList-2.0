@@ -6,6 +6,7 @@ import Result from './Result';
 
 export default function Form() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [displayTerm, setDisplayTerm] = useState('');
   const [contentLoading, setContentLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [blankBechdelResults, setBlankBechdelResults] = useState(false);
@@ -38,7 +39,7 @@ export default function Form() {
           results.push(el);
           if (results.length === dataRes.length) {
             setMovieData(sortRelevance(results));
-            // setSearchTerm('');
+            setDisplayTerm(searchTerm);
             setContentLoading(false);
           }
         }
@@ -71,6 +72,7 @@ export default function Form() {
     setErrorMessage('');
     setBlankBechdelResults(false);
     setMovieData([]);
+    setDisplayTerm('');
     queryAPIs();
   };
 
@@ -110,14 +112,12 @@ export default function Form() {
         </div>
       )}
       {movieData && movieData.length > 0 && (
-        <>
-          <h2>Showing{movieData.length > 9 && ' top'} {movieData.length} result{movieData.length > 1 && 's'} for {searchTerm}</h2>
-          <div className='form__results'>
-            {movieData.map((movie, idx) => (
-              <Result key={idx} movie={movie} />
-            ))}
-          </div>
-        </>
+        <div className='form__results'>
+          <h2 className='form__results-header'>Showing{movieData.length > 9 && ' top'} {movieData.length} result{movieData.length > 1 && 's'} for &quot;{displayTerm}&quot;</h2>
+          {movieData.map((movie, idx) => (
+            <Result key={idx} movie={movie} />
+          ))}
+        </div>
       )}
     </form>
   );

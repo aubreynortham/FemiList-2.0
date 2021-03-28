@@ -1,5 +1,5 @@
 .form {
-  padding: 2rem;
+  padding: 1.5rem;
 
   @media screen and (min-width: $medium) {
     padding: 4rem;
@@ -96,5 +96,22 @@
 
   &__loader-icon {
     border-radius: 50%;
+  }
+
+  &__results {
+    margin-top: 4rem;
+  }
+
+  &__results-header {
+    margin-bottom: 10rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @media screen and (min-width: $small) {
+      margin-left: 4rem;
+      margin-bottom: 1rem;
+    }
   }
 }
