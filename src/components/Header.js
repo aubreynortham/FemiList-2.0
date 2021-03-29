@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from '../images/logo.png';
+import logo from '../images/logo-mauve.png';
 import rosieBg from '../images/rosie.jpg';
 
 export default function Header() {
   return (
-    <div className='header'>
+    <section className='header'>
       <img className='header__image' src={rosieBg} alt='Rosie the Riveter clutches a pair of movie tickets' />
       <div className='header__content'>
         <img className='header__logo' src={logo} alt='The FemiList' />
@@ -20,6 +20,6 @@ export default function Header() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -19,7 +19,6 @@
     top: 50%;
     transform: translate(20%, -50%);
     opacity: 0.3;
-    z-index: -1;
   }
 
   &__header-title {
@@ -93,7 +92,6 @@
 
   &__gif {
     width: 100%;
-    z-index: -2;
   }
 
   &__recap {
