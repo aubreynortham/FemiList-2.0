@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/FemiList-2.0/static/css/main.7985b29f.chunk.css",
+    "main.css": "/FemiList-2.0/static/css/main.8eddf9fb.chunk.css",
     "main.js": "/FemiList-2.0/static/js/main.b9633936.chunk.js",
     "main.js.map": "/FemiList-2.0/static/js/main.b9633936.chunk.js.map",
     "runtime-main.js": "/FemiList-2.0/static/js/runtime-main.6703a937.js",
@@ -8,7 +8,7 @@
     "static/js/2.c3b12417.chunk.js": "/FemiList-2.0/static/js/2.c3b12417.chunk.js",
     "static/js/2.c3b12417.chunk.js.map": "/FemiList-2.0/static/js/2.c3b12417.chunk.js.map",
     "index.html": "/FemiList-2.0/index.html",
-    "static/css/main.7985b29f.chunk.css.map": "/FemiList-2.0/static/css/main.7985b29f.chunk.css.map",
+    "static/css/main.8eddf9fb.chunk.css.map": "/FemiList-2.0/static/css/main.8eddf9fb.chunk.css.map",
     "static/js/2.c3b12417.chunk.js.LICENSE.txt": "/FemiList-2.0/static/js/2.c3b12417.chunk.js.LICENSE.txt",
     "static/media/arrow-down.6159ca94.svg": "/FemiList-2.0/static/media/arrow-down.6159ca94.svg",
     "static/media/blob-1.66f443ea.svg": "/FemiList-2.0/static/media/blob-1.66f443ea.svg",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.6703a937.js",
     "static/js/2.c3b12417.chunk.js",
-    "static/css/main.7985b29f.chunk.css",
+    "static/css/main.8eddf9fb.chunk.css",
     "static/js/main.b9633936.chunk.js"
   ]
 }
