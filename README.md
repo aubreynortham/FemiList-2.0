@@ -20,4 +20,4 @@ Bechdel Test API http://bechdeltest.com/api/v1/doc
 
 Run a local build of the project with `npm start`.
 
-Project is hosted at https://aubreynortham.com/FemiList-2.0/
+Project is hosted at https://www.aubreynortham.com/FemiList-2.0/
